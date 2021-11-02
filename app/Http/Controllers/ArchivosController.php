@@ -44,7 +44,7 @@ class ArchivosController extends Controller
             $nombre = explode('public/archivos/', $value)[1];
 
             array_push($listado, $nombre);
-            array_push($archivo, 'http://localhost/gestor-de-archivos/storage/app/public/archivos/'.$nombre);
+            array_push($archivo, 'storage/archivos/'.$nombre);
         }
 
         return view('listado', ['listado' => $listado, 'archivo' => $archivo]);
