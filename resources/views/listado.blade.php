@@ -46,12 +46,12 @@
 
             @if(explode('/',Storage::disk('local')->mimeType('\public\archivos\\'.$listado[$i]))[0] == 'image')
                 <div class="elementoLista">
-                    <a href={{$archivo[$i]}}><img src={{$archivo[$i]}}>{{ $listado[$i] }}</a>
+                    <a href={{$archivo[$i]}} target="_blank"><img src={{$archivo[$i]}}>{{ $listado[$i] }}</a>
                     <a href="{{$archivo[$i]}}" download={{$listado[$i]}}>Descargar</a>
                 </div>
             @else
                 <div class="elementoLista">
-                    <a href={{$archivo[$i]}}>{{ $listado[$i] }}</a>
+                    <a href={{$archivo[$i]}} target="_blank">{{ $listado[$i] }}</a>
                     <a href="{{$archivo[$i]}}" download={{$listado[$i]}}>Descargar</a>
                 </div>
             @endif
