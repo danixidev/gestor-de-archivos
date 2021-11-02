@@ -49,4 +49,11 @@ class ArchivosController extends Controller
 
         return view('listado', ['listado' => $listado, 'archivo' => $archivo]);
     }
+
+
+    public function descargar($id) {
+
+        return Storage::download('public/archivos/'.$id);
+    
+    }
 }

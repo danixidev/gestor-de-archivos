@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\ArchivosController;
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,3 +19,6 @@ Route::match(['get', 'post'], '/inicio', [ ArchivosController::class, 'subirArch
 
 
 Route::get('/listado', [ ArchivosController::class, 'verListado' ]) -> name('listado');
+
+
+Route::get('/descargar/{id}', [ ArchivosController::class, 'descargar' ]) -> name('descargar');
