@@ -26,6 +26,10 @@
             border-radius: 8px;
             border: 1px solid black;
         }
+
+        a {
+            margin-right: 15px;
+        }
     </style>
 
 </head>
@@ -41,9 +45,15 @@
         @for ($i = 0; $i < count($listado); $i++)
 
             @if(explode('/',Storage::disk('local')->mimeType('\public\archivos\\'.$listado[$i]))[0] == 'image')
-                <div class="elementoLista"><a href={{$archivo[$i]}}><img src={{$archivo[$i]}}>{{ $listado[$i] }}</a></div>
+                <div class="elementoLista">
+                    <a href={{$archivo[$i]}}><img src={{$archivo[$i]}}>{{ $listado[$i] }}</a>
+                    <a href="{{$archivo[$i]}}" download={{$listado[$i]}}>Descargar</a>
+                </div>
             @else
-                <div class="elementoLista"><a href={{$archivo[$i]}}>{{ $listado[$i] }}</a></div>
+                <div class="elementoLista">
+                    <a href={{$archivo[$i]}}>{{ $listado[$i] }}</a>
+                    <a href="{{$archivo[$i]}}" download={{$listado[$i]}}>Descargar</a>
+                </div>
             @endif
         @endfor
 
