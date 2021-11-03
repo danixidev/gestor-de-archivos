@@ -40,8 +40,9 @@ class ArchivosController extends Controller
         $listado = [];
         $archivo = [];
 
-        foreach (Storage::files('public/archivos') as $key => $value) {
+        foreach (Storage::files('public/archivos') as $key => $value) { //$key sobra, se puede poner 'as $value'
             $nombre = explode('public/archivos/', $value)[1];
+          //$nombre = str_replace('public/archivos/', '', $value);
 
             array_push($listado, $nombre);
             array_push($archivo, 'storage/archivos/'.$nombre);
@@ -54,6 +55,6 @@ class ArchivosController extends Controller
     public function descargar($id) {
 
         return Storage::download('public/archivos/'.$id);
-    
+      //return Storage::disk('public/archivos/')->download($id);
     }
 }
